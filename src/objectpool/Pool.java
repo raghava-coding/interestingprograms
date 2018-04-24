@@ -3,7 +3,5 @@ package objectpool;
 public interface Pool<T> {
     void returnItem(T t);
 
-    <T> T borrowItem();
-
-    int remainingItems();
+    <T> T borrowItem() throws InterruptedException, PoolDepletionException;
 }
